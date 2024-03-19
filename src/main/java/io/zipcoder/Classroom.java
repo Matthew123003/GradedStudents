@@ -3,8 +3,7 @@ package io.zipcoder;
 //import jdk.internal.org.objectweb.asm.tree.InsnList;
 
 import java.lang.reflect.Array;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class Classroom {
 
@@ -67,5 +66,27 @@ public class Classroom {
         }
     }
 
+    public Student[] getStudentsByScore(){
+        Arrays.sort(students, new Comparator<Student>() {
+            @Override
+            public int compare(Student o1, Student o2) {
+                int o1Score = Integer.parseInt(o1.getExamScores());
+                int o2Score = Integer.parseInt(o2.getExamScores());
+
+                int scoreCompare = Integer.compare(o1Score, o2Score);
+                if(scoreCompare != 0){
+                    return scoreCompare;
+            } else {
+                    return o1.getFirstName().compareTo(o2.getFirstName());
+                }
+            }
+        });
+        return students;
+    }
+
+
+    public Map<Student, String> getGradeBook(){
+        return null;
+    }
 
 }
