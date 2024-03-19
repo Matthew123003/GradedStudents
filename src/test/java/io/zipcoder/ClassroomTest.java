@@ -47,14 +47,14 @@ public class ClassroomTest {
         // : Given
         int maxNumberOfStudents = 1;
         Classroom classroom = new Classroom(maxNumberOfStudents);
-        ArrayList<Double> examScores  = new ArrayList<>(List.of(100.0));
+        ArrayList<Double> examScores = new ArrayList<>(List.of(100.0, 90.0));
         Student student = new Student("Leon", "Hunter", examScores);
-        int expected = 1;
+        Integer expected = 1;
 
         // When
         classroom.addStudent(student);
-        Student[] students = classroom.getStudents();
-        int actual = students.length;
+        Student[] afterAdd = classroom.getStudents();
+        Integer actual = afterAdd.length;
 
         // Then
         Assert.assertEquals(expected, actual);
