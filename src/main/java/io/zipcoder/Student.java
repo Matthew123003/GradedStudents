@@ -44,6 +44,14 @@ public class Student {
         return stringScores;
     }
 
+    public double getExamScoresTotal(){
+        double total = 0;
+        for(int i = 0; i < examScores.size(); i++){
+            total += examScores.get(i);
+        }
+        return total;
+    }
+
 
     public void addExamScore(double examScore){
         examScores.add(examScore);
