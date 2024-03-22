@@ -49,7 +49,6 @@ public class ClassroomTest {
         Classroom classroom = new Classroom(maxNumberOfStudents);
         ArrayList<Double> examScores = new ArrayList<>(List.of(100.0, 90.0));
         Student student = new Student("Leon", "Hunter", examScores);
-        Integer expected = 1;
 
         // When
         classroom.addStudent(student);
@@ -57,7 +56,7 @@ public class ClassroomTest {
         Integer actual = afterAdd.length;
 
         // Then
-        Assert.assertEquals(expected, actual);
+        Assert.assertEquals(student, classroom.getStudents()[0]);
 
     }
 
@@ -75,8 +74,8 @@ public class ClassroomTest {
         classroom.addStudent(student);
         classroom.addStudent(student1);
         classroom.removeStudent("Peter", "Parker");
-        Student[] afterAdd = classroom.getStudents();
-        Integer actual = afterAdd.length;
+        Student[] students = classroom.getStudents();
+        Integer actual = students.length;
 
         // Then
         Assert.assertEquals(expected, actual);
