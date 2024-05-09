@@ -48,7 +48,7 @@ public class ClassroomTest {
         int maxNumberOfStudents = 1;
         Classroom classroom = new Classroom(maxNumberOfStudents);
         ArrayList<Double> examScores = new ArrayList<>(List.of(100.0, 90.0));
-        Student student = new Student("Leon", "Hunter", examScores);
+        Student student = new Student("Leon", "Hunter", null);
 
         // When
         classroom.addStudent(student);

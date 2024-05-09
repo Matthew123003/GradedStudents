@@ -21,7 +21,7 @@ public class StudentTest {
 
         // When
         String actual = String.valueOf(student.getExamScores());
-        String expected = "Exam Scores:\n Exam 1 " + 100.0 + "\n Exam 2 " + 87.0 + "\n Exam 3 " + 90.0 + "\n Exam 4 " + 79.0;
+        String expected = "Exam Scores:\n Exam 1 -> " + 100.0 + "\n Exam 2 -> " + 87.0 + "\n Exam 3 -> " + 90.0 + "\n Exam 4 -> " + 79.0;
 
         // Then
         Assert.assertEquals(expected, actual);
@@ -33,7 +33,7 @@ public class StudentTest {
         String lastName = "Hunter";
         ArrayList<Double> examScores = new ArrayList<>();
         Student student = new Student(firstName, lastName, examScores);
-        String expected = "Exam Scores:\n Exam 1 " + 100.0;
+        String expected = "Exam Scores:\n Exam 1 -> " + 100.0;
 
         // Wh
         student.addExamScore(100.0);
